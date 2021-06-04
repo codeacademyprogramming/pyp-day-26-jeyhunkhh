@@ -1,0 +1,83 @@
+[
+    {
+      "id": "1",
+      "reservation": [
+        {
+          "id": "1",
+          "roomId": "1",
+          "reservedBy": "Azad Azadli",
+          "from": "21.06.2021",
+          "to": "22.06.2021",
+          "notes": "not special note"
+        },
+        {
+          "id": "2",
+          "roomId": "1",
+          "reservedBy": "Azad Azadli",
+          "from": "23.06.2021",
+          "to": "24.06.2021",
+          "notes": "not special note"
+        },
+        {
+          "id": "3",
+          "roomId": "1",
+          "reservedBy": "Azad Azadli",
+          "from": "25.06.2021",
+          "to": "26.06.2021",
+          "notes": "not special note"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "reservation": []
+    },
+    {
+      "id": "3",
+      "reservation": []
+    },
+    {
+      "id": "4",
+      "reservation": []
+    },
+    {
+      "id": "5",
+      "reservation": []
+    },
+    {
+      "id": "6",
+      "reservation": []
+    },
+    {
+      "id": "7",
+      "reservation": []
+    },
+    {
+      "id": "8",
+      "reservation": []
+    },
+    {
+      "id": "9",
+      "reservation": []
+    },
+    {
+      "id": "10",
+      "reservation": []
+    },
+    {
+      "id": "11",
+      "reservation": []
+    },
+    {
+      "id": "12",
+      "reservation": []
+    },
+    {
+      "id": "13",
+      "reservation": []
+    },
+    {
+      "id": "14",
+      "reservation": []
+    }
+  ]
