@@ -1,18 +1,24 @@
 import "./App.scss";
 import { RoomManagement } from "./modules/room/components";
 import { ReservationTable } from "./modules/room/components/ReservationTable";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact>
+        <Route path="/room" exact>
           <RoomManagement />
         </Route>
-        <Route path="/room-reservation/:id">
+        <Route path="/room/:id">
           <ReservationTable />
         </Route>
+        <Redirect to="/room" />
       </Switch>
     </Router>
   );

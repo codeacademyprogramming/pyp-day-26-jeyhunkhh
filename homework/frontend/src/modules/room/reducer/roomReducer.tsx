@@ -19,6 +19,18 @@ export const roomsReducer = (state: Array<IRoom> = [], action: Action) => {
         ...state,
         err: action.error,
       };
+
+    case ROOM_ACTIONS.ADD_RESERVATION_ROOM:
+      return state.map((room) => {
+        if (room.id === action.payload.id) {
+          return {
+            ...room,
+            reservation: action.payload.reservation,
+          };
+        } else {
+          return room;
+        }
+      });
     default:
       return state;
   }

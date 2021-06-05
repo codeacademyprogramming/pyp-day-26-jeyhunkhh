@@ -1,15 +1,14 @@
 export interface IRoom {
   id: number;
-  reservations: IReservation[];
+  reservation: IReservation[];
 }
 
 export interface IReservation {
-  id: number;
-  roomId: number;
-  reservedBy: string;
-  from: string; // Date
-  to: string; // Date
-  notes: string;
+  id: string;
+  reservedBy?: string;
+  from?: string; // Date
+  to?: string; // Date
+  notes?: string;
 }
 
 export interface IRoomState {

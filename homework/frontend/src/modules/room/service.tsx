@@ -1,4 +1,5 @@
 import { HttpClient } from "../../httpClient/index";
+import { IReservation } from "./interface";
 
 class RoomsService extends HttpClient {
   constructor() {
@@ -11,6 +12,15 @@ class RoomsService extends HttpClient {
 
   async getReservation(id: string) {
     return this.get(`demo/v1/room/${id}`);
+  }
+
+  async addReservation(
+    id: string,
+    oldData: IReservation[],
+    newData: IReservation
+  ) {
+    const reservationData = [...oldData, newData];
+    return this.put(`demo/v1/room/`, id, reservationData);
   }
 }
 

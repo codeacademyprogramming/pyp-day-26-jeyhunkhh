@@ -8,7 +8,7 @@ export const FloorPlan: FC<{ roomsData: IRoom[] }> = ({ roomsData }) => {
 
   const handleOnClick = useCallback(
     (id: number) => {
-      history.push(`/room-reservation/${id}`);
+      history.push(`/room/${id}`);
     },
     [history]
   );
@@ -32,7 +32,6 @@ export const FloorPlan: FC<{ roomsData: IRoom[] }> = ({ roomsData }) => {
           <path
             fill="#000"
             stroke="#979797"
-            data-id={roomsData[0].id}
             onClick={() => handleOnClick(roomsData[0].id)}
             d="M360.5 83.5H407.5V134.5H360.5z"
           ></path>
@@ -41,89 +40,76 @@ export const FloorPlan: FC<{ roomsData: IRoom[] }> = ({ roomsData }) => {
             stroke="#979797"
             d="M411.5 83.5H459.5V134.5H411.5z"
             onClick={() => handleOnClick(roomsData[1].id)}
-            data-id={roomsData[1].id}
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[2].id}
             onClick={() => handleOnClick(roomsData[2].id)}
             d="M360.5 137.5H407.5V184.5H360.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[3].id}
             onClick={() => handleOnClick(roomsData[3].id)}
             d="M411.5 137.5H459.5V184.5H411.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[4].id}
             onClick={() => handleOnClick(roomsData[4].id)}
             d="M205.5 226.5H253.5V273.5H205.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[5].id}
             onClick={() => handleOnClick(roomsData[5].id)}
             d="M256.5 226.5H302.5V273.5H256.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[6].id}
             onClick={() => handleOnClick(roomsData[6].id)}
             d="M305.5 226.5H351.5V273.5H305.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[7].id}
             onClick={() => handleOnClick(roomsData[7].id)}
             d="M205.5 276.5H253.5V323.5H205.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[8].id}
             onClick={() => handleOnClick(roomsData[8].id)}
             d="M256.5 276.5H302.5V323.5H256.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[9].id}
             onClick={() => handleOnClick(roomsData[9].id)}
             d="M305.5 276.5H351.5V323.5H305.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[10].id}
             onClick={() => handleOnClick(roomsData[10].id)}
             d="M28.5 17.5H235.5V162.5H28.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[11].id}
             onClick={() => handleOnClick(roomsData[11].id)}
             d="M20.5 202.5H149.5V288.5H20.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[12].id}
             onClick={() => handleOnClick(roomsData[12].id)}
             d="M20.5 292.5H149.5V357.5H20.5z"
           ></path>
           <path
             fill="#D8D8D8"
             stroke="#979797"
-            data-id={roomsData[13].id}
             onClick={() => handleOnClick(roomsData[13].id)}
             d="M20.5 361.5H149.5V422.5H20.5z"
           ></path>

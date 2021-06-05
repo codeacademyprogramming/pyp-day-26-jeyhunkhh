@@ -7,19 +7,25 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Button,
 } from "@material-ui/core";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { roomsService } from "../service";
 import { IReservation } from "../interface";
+import { AddReservation } from "./AddReservation";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addReservation } from "../actions/roomAction";
 
 export const ReservationTable = () => {
-  const [reservationData, setReservationData] = useState<Array<IReservation>>(
-    []
-  );
+  const [reservationData, setReservationData] = useState<IReservation[]>([]);
   interface Param {
     id: string;
   }
+
+  const dispatch = useDispatch();
+
   const param: Param = useParams();
 
   useEffect(() => {
@@ -28,8 +34,27 @@ export const ReservationTable = () => {
       .then(({ data }) => setReservationData(data.reservation));
   }, [param]);
 
+  const handleAddSave = useCallback(
+    (newReservation: IReservation) => {
+      dispatch(addReservation(param.id, newReservation, reservationData));
+      // console.log(newReservation, reservationData);
+      // roomsService
+      //   .addReservation(param.id, reservationData, newReservation)
+      //   .then((res) => {
+      //     console.log(res.data.reservation);
+      //   });
+    },
+    [param.id, reservationData, dispatch]
+  );
+
   return (
     <Box width="1024px" mx="auto" marginTop={3}>
+      <Box marginBottom={5} display="flex" justifyContent="space-between">
+        <Button variant="outlined" color="primary">
+          <Link to="/room">Cancel</Link>
+        </Button>
+        <AddReservation handleAddSave={handleAddSave} />
+      </Box>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
@@ -43,8 +68,6 @@ export const ReservationTable = () => {
           <TableBody>
             {reservationData.length > 0 &&
               reservationData.map((reserv) => {
-                console.log(reserv);
-
                 return (
                   <TableRow key={reserv.id}>
                     <TableCell component="th" scope="row">

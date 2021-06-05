@@ -1,6 +1,7 @@
 import { ROOM_ACTIONS } from "./consts";
 import { roomsService } from "../service";
 import { Dispatch } from "redux";
+import { IReservation } from "../interface";
 
 export function getRooms(dispatch: Dispatch) {
   dispatch({
@@ -22,3 +23,23 @@ export function getRooms(dispatch: Dispatch) {
       });
     });
 }
+
+export const addReservation =
+  (id: string, newReservation: IReservation, oldData: IReservation[]) =>
+  async (dispatch: Dispatch) => {
+    try {
+      const res = await roomsService.addReservation(
+        id,
+        oldData,
+        newReservation
+      );
+      console.log(res);
+
+      dispatch({
+        type: ROOM_ACTIONS.ADD_RESERVATION_ROOM,
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };

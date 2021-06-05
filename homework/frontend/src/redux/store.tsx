@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { roomsReducer } from "../modules/room/reducer/roomReducer";
 
 export const rootReducer = combineReducers({
-  rooms: roomsReducer,
+  roomsRed: roomsReducer,
 });
 
 const middleware = [thunk];
