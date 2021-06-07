@@ -35,14 +35,11 @@ export const ReservationTable = () => {
   }, [param]);
 
   const handleAddSave = useCallback(
-    (newReservation: IReservation) => {
-      dispatch(addReservation(param.id, newReservation, reservationData));
-      // console.log(newReservation, reservationData);
-      // roomsService
-      //   .addReservation(param.id, reservationData, newReservation)
-      //   .then((res) => {
-      //     console.log(res.data.reservation);
-      //   });
+    async (newReservation: IReservation) => {
+      await dispatch(addReservation(param.id, newReservation, reservationData));
+      await roomsService
+        .getReservation(param.id)
+        .then(({ data }) => setReservationData(data.reservation));
     },
     [param.id, reservationData, dispatch]
   );
