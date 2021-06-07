@@ -1,8 +1,14 @@
 import { ROOM_ACTIONS } from "../actions/consts";
-import { IRoom } from "../interface";
+import { IRoomState } from "../interface";
 import { Action } from "../actions/actionType";
 
-export const roomsReducer = (state: Array<IRoom> = [], action: Action) => {
+const initialState: IRoomState = {
+  rooms: {
+    data: [],
+  },
+};
+
+export const roomsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case `${ROOM_ACTIONS.GET_ROOM}`:
       return {
@@ -21,7 +27,7 @@ export const roomsReducer = (state: Array<IRoom> = [], action: Action) => {
       };
 
     case ROOM_ACTIONS.ADD_RESERVATION_ROOM:
-      return state.map((room) => {
+      return state.rooms.data.map((room) => {
         if (room.id === action.payload.id) {
           return {
             ...room,
